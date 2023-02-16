@@ -1,1 +1,84 @@
+/* Add a background color to the entire page */
+body {
+  background-color: #F5F5F5;
+}
 
+/* Style the header */
+header {
+  background-color: #1E90FF;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: #f2f2f2;
+  overflow: hidden;
+
+}
+
+/* Style the navigation bar options */
+nav select {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+
+nav button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1E90FF;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style the main content */
+main {
+  padding: 20px;
+}
+
+/* Style the "Get Latest News" and "Stay Updated!" headings */
+h3, h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #1E90FF;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Style the news container */
+#newsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style the individual news items */
+.newsItem {
+  width: 30%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+.newsItem h4 {
+  color: #1E90FF;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.newsItem p {
+  color: #666;
+  font-size: 14px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
