@@ -4,15 +4,14 @@ const loadSavedButton = document.querySelector("#loadSavedButton");
 const loadNewsButton = document.querySelector("#loadNewsButton");
 const categorySelect = document.querySelector("#categorySelect");
 
-function showDiv() {
+function loadNews() {
   document.querySelector('#hidden').style.display = "block";
 }
 
 const savedNews = [];
 
 const handleSavedNews = (savedItem) => {
-   
-    savedNews.push(savedItem);
+  savedNews.push(savedItem);
   console.log(savedNews);
   alert("News saved")
 }
@@ -22,52 +21,53 @@ const getNews = (category = "science") => {
   fetch(`https://inshorts.deta.dev/news?category=${category}`)
     .then((response) => response.json())
     .then((data) => {
-       console.log("Data", data)
+      console.log("Data", data)
       data.data.forEach((newsItem) => {
         const div = document.createElement("div");
         div.classList.add("newsItem");
         div.innerHTML = `
           <p>By <strong>${newsItem.author}</strong></p>
           <h2>${newsItem.title}</h2>
-          <div id="box">
-          <img src="${newsItem.imageUrl}" class="img"></img>
-          <div id="innerbox">
-          <p id="nscontent">${newsItem.content} <a href="${newsItem.readMoreUrl}" style="text-decoration:none">READ MORE</a></p>
-          <p>Date:- ${newsItem.date}</p>
-          <p>Time:- ${newsItem.time}</p>
-          </div>
-          </div>
-       
+          <img src="${newsItem.imageUrl}" alt="${newsItem.title}">
+          <p>${newsItem.content} <a href="${newsItem.readMoreUrl}">Read more</a></p>
+          <div class="like-section" style="display: flex; align-items: center;">
+  <button class="like-button" style="font-size: 2.5em; background-color: transparent; border: none; cursor: pointer;" data-likes="0">&#9825;</button>
+  <span class="like-count" style="margin-left: 10px; font-weight: bold;">0</span>
+</div>
+<br>
+
         `;
         const button = document.createElement("button");
         button.innerHTML = "Save"
         button.onclick = function () {
-        handleSavedNews(newsItem)
-    }
+          handleSavedNews(newsItem)
+        }
         div.appendChild(button);
         newsContainer.appendChild(div);
+
+        // Get the like button and like count elements
+        const likeButton = div.querySelector('.like-button');
+        const likeCount = div.querySelector('.like-count');
+
+        // Add an event listener to the like button
+        likeButton.addEventListener('click', () => {
+          // Get the current number of likes
+          let likes = parseInt(likeButton.dataset.likes);
+
+          // Increment the number of likes
+          likes++;
+
+          // Update the like button and count
+          likeButton.dataset.likes = likes;
+          likeCount.textContent = likes;
+        });
       });
     });
-};
-
-const saveNews = () => {
-  const news = Array.from(document.querySelectorAll(".newsItem")).map(
-    (newsItem) => {
-      return {
-        title: newsItem.querySelector("h2").textContent,
-        content: newsItem.querySelector("#nscontent").textContent,
-      };
-    }
-  );
-  console.log("saved news", news)
-  localStorage.setItem("savedNews", JSON.stringify(news));
 };
 
 const loadSavedNews = () => {
   console.log("Saved News", savedNews)
   newsContainer.innerHTML = "";
-  //const savedNews = JSON.parse(localStorage.getItem("savedNews"));
-  //console.log("saved news from storage", savedNews)
   if (!savedNews) {
     return;
   }
@@ -75,9 +75,8 @@ const loadSavedNews = () => {
     const div = document.createElement("div");
     div.classList.add("newsItem");
     div.innerHTML = `
-    <h2>${newsItem.title}</h2>
-    <p>${newsItem.content}</p>
-    
+      <h2>${newsItem.title}</h2>
+      <p>${newsItem.content}</p>
     `;
     newsContainer.appendChild(div);
   });

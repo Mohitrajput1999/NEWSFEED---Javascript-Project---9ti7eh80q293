@@ -1,84 +1,90 @@
-/* Add a background color to the entire page */
+/* Set font family and size */
 body {
-  background-color: #F5F5F5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: rgb(211, 186, 186);
 }
 
 /* Style the header */
 header {
-  background-color: #1E90FF;
-  color: white;
+  background-color: #182c72;
+  color: #fff;
+  padding: 20px;
   text-align: center;
-  padding: 10px;
 }
 
 /* Style the navigation bar */
 nav {
   background-color: #f2f2f2;
-  overflow: hidden;
-
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Style the navigation bar options */
-nav select {
-  padding: 10px;
-  margin: 10px;
-  font-size: 16px;
+#categorySelect {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 14px;
   border: none;
+  background-color: #fff;
   border-radius: 5px;
-  background-color: white;
 }
 
-nav button {
+#loadNewsButton, #loadSavedButton {
+  background-color: #20195c;
+  color: #fff;
   padding: 10px;
-  margin: 10px;
-  font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #1E90FF;
-  color: white;
   cursor: pointer;
 }
 
-/* Style the main content */
+#loadNewsButton:hover, #loadSavedButton:hover {
+  background-color: #555;
+}
+
+/* Style the main section */
 main {
   padding: 20px;
-}
-
-/* Style the "Get Latest News" and "Stay Updated!" headings */
-h3, h2 {
-  font-family: 'Roboto', sans-serif;
-  color: #1E90FF;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 
-/* Style the news container */
+#hidden {
+  margin-top: 20px;
+}
+
 #newsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Style the individual news items */
+/* Style the news items */
 .newsItem {
-  width: 30%;
-  margin: 10px;
+  width: 10000px;
+  background-color: grey;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 10px;
-  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px rgb(28, 11, 11);
 }
 
 .newsItem h4 {
-  color: #1E90FF;
-  font-size: 18px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .newsItem p {
-  color: #666;
   font-size: 14px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin: 10px 0;
+}
+
+.newsItem a {
+  text-decoration: none;
+  color: #082b96;
+}
+
+.newsItem a:hover {
+  text-decoration: underline;
 }
