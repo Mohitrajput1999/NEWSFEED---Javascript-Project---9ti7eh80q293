@@ -12,7 +12,6 @@ header {
   padding: 20px;
   text-align: center;
 }
-
 /* Style the navigation bar */
 nav {
   background-color: #f2f2f2;
@@ -40,13 +39,12 @@ nav {
   cursor: pointer;
 }
 
-#loadNewsButton:hover, #loadSavedButton:hover {
-  background-color: #555;
-}
+
 
 /* Style the main section */
 main {
-  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -62,29 +60,94 @@ main {
 
 /* Style the news items */
 .newsItem {
-  width: 10000px;
-  background-color: grey;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
   padding: 20px;
-  box-shadow: 5px 5px 5px rgb(28, 11, 11);
+  text-align: left;
+  border-radius: 16px;
+  background-color:  silver;
 }
 
-.newsItem h4 {
-  margin-top: 0;
+.savense {
+  height: 100px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 16px;
+  background-color: gold;
 }
 
-.newsItem p {
-  font-size: 14px;
-  margin: 10px 0;
+.likeButton {
+  margin-top: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+
 }
 
-.newsItem a {
-  text-decoration: none;
-  color: #082b96;
+.img{
+  height: 200px;
+  width: 300px;
 }
 
-.newsItem a:hover {
-  text-decoration: underline;
+#box{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#innerbox{
+  display: flex;
+  flex-direction: column;
+}
+
+#loadSavedButton{
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #20195c;
+}
+
+#loadNewsButton{
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #20195c;
+}
+
+#categorySelect{
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #ebf6f5;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+
+strong{
+  color: green;
+}
+
+
+#text{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
