@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <title>News Feed</title>
     <link rel="stylesheet" href="styles.css">
+
   </head>
   <body>
     <header>
-      <h1>My NewsFeed</h1>
+      <h1>My NewsFeed</h1>  
     </header>
-    <nav>
-      <div id="header">
+    <button id="home"><a href="index.html">Home</a></button>
+
+    <div id="header">
       <select id="categorySelect">
-        <option value="all">All</option>
+        <option value="general">All</option>
+        <option value="technology">Technology</option>
         <option value="science">Science</option>
         <option value="business">Business</option>
         <option value="sports">Sports</option>
-        <option value="world">World</option>
-        <option value="politics">Politics</option>
-        <option value="hatke">Hatke</option>
-        <option value="automobile">Automobile</option>
+        <option value="health">Health</option>
+        <option value="entertainment">Entertainment</option>
       </select>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <p id="popup-message">News saved</p>
+        </div>
+      </div>
+      
       <button id="loadNewsButton" onclick="loadNews()">Load News</button>
       <button id="loadSavedButton">Load Saved</button>
     </div>
-    </nav>
     <main>
       <div id="hidden" style="display: none;">
-      <div id="newsContainer"></div>
-  
-    </div>
-    <h3>Get Latest News</h3>
-    <h2>Stay Updated!</h2>
+        <div id="newsContainer"></div>
+      </div>
+      <h3>Get Latest News</h3>
+      <h2>Stay Updated!</h2>
     </main>
     <script src="App.js"></script>
   </body>
