@@ -1,1 +1,1 @@
-# My Newsfeed Project visit link https://dancing-griffin-9e44f8.netlify.app/
+# My Newsfeed Project visit link https://newsfeed-javascript-project-9ti7eh80q293.vercel.app/
