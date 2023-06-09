@@ -64,16 +64,10 @@ const deleteSavedNews = (index) => {
 
 // get news from API
 const getNews = (category = "all") => {
-<<<<<<< HEAD
   const apiKey = '818c4c1d1bd34d11a54b8d27eba1b044';
   newsContainer.innerHTML = "";
 
   let url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}`;
-=======
-  newsContainer.innerHTML = "";
-
-  let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=818c4c1d1bd34d11a54b8d27eba1b044`;
->>>>>>> 7859cbf0dc7d2f6a4953e765affc3ba4ceae08cb
 
   fetch(url)
     .then((response) => response.json())
