@@ -9,7 +9,7 @@ function loadNews() {
 
 const savedNews = [];
 
-// Display Sved News 
+// Display Saved News 
 const displaySavedNews = () => {
   newsContainer.innerHTML = "";
   if (!savedNews) {
@@ -64,10 +64,10 @@ const deleteSavedNews = (index) => {
 
 // get news from API
 const getNews = (category = "all") => {
-  const apiKey = '818c4c1d1bd34d11a54b8d27eba1b044'
+  const apiKey = '818c4c1d1bd34d11a54b8d27eba1b044';
   newsContainer.innerHTML = "";
 
-  let url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apiKey}`;
+  let url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}`;
 
   fetch(url)
     .then((response) => response.json())
@@ -88,7 +88,7 @@ const getNews = (category = "all") => {
     });
 };
 
-// save button in each news artices which display pop up when clicked
+// save button in each news article which displays a popup when clicked
 const createSaveButton = (newsItem) => {
   const saveButton = document.createElement("button");
   saveButton.innerHTML = "Save";
